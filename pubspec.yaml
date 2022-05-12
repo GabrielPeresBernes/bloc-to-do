@@ -1,0 +1,35 @@
+name: aula_flutter
+description: A Very Good Project created by Very Good CLI.
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=2.13.0 <3.0.0"
+
+dependencies:
+  bloc: ^8.0.1
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.0.1
+  flutter_localizations:
+    sdk: flutter
+  freezed: ^1.1.0
+  freezed_annotation: ^1.1.0
+  hydrated_bloc: ^8.1.0
+  intl: ^0.17.0
+  json_serializable: ^6.2.0
+  path_provider: ^2.0.10
+  reactive_forms: ^12.0.0
+  uuid: ^3.0.6
+
+dev_dependencies:
+  bloc_test: ^9.0.2
+  build_runner: ^2.1.10
+  flutter_test:
+    sdk: flutter
+  mocktail: ^0.2.0
+  very_good_analysis: ^2.3.0
+
+flutter:
+  uses-material-design: true
+  generate: true
