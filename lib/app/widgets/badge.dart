@@ -47,14 +47,13 @@ class Badge extends StatelessWidget {
         color: outlined ? Colors.transparent : getColor(),
         borderRadius: const BorderRadius.all(Radius.circular(4)),
         border: Border.all(
-          color: outlined ? const Color.fromRGBO(121, 116, 126, 1) : getColor(),
+          color: outlined ? AppColors.gray2 : getColor(),
         ),
       ),
       child: Text(
         getTitle(),
         style: TextStyle(
-          color:
-              outlined ? const Color.fromRGBO(121, 116, 126, 1) : Colors.white,
+          color: outlined ? AppColors.gray2 : Colors.white,
           fontSize: large ? 14 : 12,
           fontWeight: FontWeight.w500,
         ),

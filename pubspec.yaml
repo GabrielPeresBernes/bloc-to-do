@@ -13,6 +13,7 @@ dependencies:
   flutter_bloc: ^8.0.1
   flutter_localizations:
     sdk: flutter
+  flutter_svg: ^1.0.3
   freezed: ^1.1.0
   freezed_annotation: ^1.1.0
   hydrated_bloc: ^8.1.0
@@ -33,3 +34,5 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
+  assets:
+    - assets/

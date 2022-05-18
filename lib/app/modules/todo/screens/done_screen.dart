@@ -1,5 +1,7 @@
 import 'package:aula_flutter/app/modules/todo/bloc/todo_bloc.dart';
 import 'package:aula_flutter/app/modules/todo/models/todo_model.dart';
+import 'package:aula_flutter/app/widgets/empty.dart';
+import 'package:aula_flutter/app/widgets/error_snack_bar.dart';
 import 'package:aula_flutter/app/widgets/todo_card.dart';
 import 'package:aula_flutter/app/widgets/todo_dialog.dart';
 import 'package:flutter/material.dart';
@@ -17,13 +19,18 @@ class DoneScreen extends StatelessWidget {
       );
     }
 
-    return BlocBuilder<ToDoBloc, ToDoState>(
+    return BlocConsumer<ToDoBloc, ToDoState>(
+      listener: (context, state) {
+        if (state.error && !state.isLoading) {
+          ScaffoldMessenger.of(context).showSnackBar(errorSnackBar());
+        }
+      },
       builder: (context, state) {
-        final toDoCards = <Widget>[];
+        final toDoItems = <Widget>[];
 
         for (final todo in state.storedToDos) {
           if (todo.isCompleted!) {
-            toDoCards.add(
+            toDoItems.add(
               ToDoCard(
                 title: todo.title,
                 subtitle: todo.subtitle,
@@ -40,9 +47,16 @@ class DoneScreen extends StatelessWidget {
           }
         }
 
+        if (toDoItems.isEmpty) {
+          return const Padding(
+            padding: EdgeInsets.only(top: 64),
+            child: Empty('Nothing done yet!'),
+          );
+        }
+
         return ListView(
           padding: const EdgeInsets.only(left: 16, right: 16, top: 32),
-          children: toDoCards,
+          children: toDoItems,
         );
       },
     );

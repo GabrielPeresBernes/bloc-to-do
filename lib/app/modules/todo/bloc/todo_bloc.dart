@@ -32,7 +32,7 @@ class ToDoBloc extends HydratedBloc<ToDoEvent, ToDoState> {
         ..isCompleted = false
         ..id = const Uuid().v4();
 
-      final updatedToDos = [...state.storedToDos, todo];
+      final updatedToDos = [todo, ...state.storedToDos];
 
       emit(state.copyWith(
         storedToDos: updatedToDos,

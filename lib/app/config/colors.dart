@@ -24,6 +24,7 @@ class AppColors {
   static const Color black600 = Color.fromRGBO(28, 27, 31, .6);
 
   static const Color gray = Color.fromRGBO(73, 69, 79, 1);
+  static const Color gray2 = Color.fromRGBO(121, 116, 126, 1);
   static const Color grayLight = Color.fromRGBO(227, 227, 229, 1);
 
   static const Color danger = Color.fromRGBO(220, 53, 69, 1);

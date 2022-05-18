@@ -79,12 +79,18 @@ class _ToDoDialogState extends State<ToDoDialog> {
                   formControlName: 'title',
                   decoration: const InputDecoration(labelText: 'Title'),
                   textInputAction: TextInputAction.next,
+                  validationMessages: (control) => {
+                    'required': 'This field is required',
+                  },
                   onSubmitted: () => form.focus('subtitle'),
                 ),
                 const SizedBox(height: 16),
                 ReactiveTextField<String>(
                   formControlName: 'subtitle',
                   decoration: const InputDecoration(labelText: 'Subtitle'),
+                  validationMessages: (control) => {
+                    'required': 'This field is required',
+                  },
                 ),
                 const SizedBox(height: 16),
                 ReactiveValueListenableBuilder(
